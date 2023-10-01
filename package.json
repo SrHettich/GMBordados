@@ -1,0 +1,44 @@
+{
+  "dependencies": {
+    "@railway/cli": "^2.1.0",
+    "aws-sdk": "^2.1321.0",
+    "bcrypt": "^5.1.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^4.6.0",
+    "cookie-session": "^2.0.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.6",
+    "express-session": "^1.17.3",
+    "moment": "^2.29.4",
+    "mongodb": "^4.10.0",
+    "mongoose": "^6.6.1",
+    "mongoose-paginate-v2": "^1.7.1",
+    "multer": "^1.4.5-lts.1",
+    "multer-s3": "^2.9.0",
+    "nodemailer": "^6.8.0",
+    "passport": "^0.6.0",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-local": "^1.0.0"
+  },
+  "name": "mongo",
+  "description": "��#\u0000 \u0000G\u0000M\u0000B\u0000o\u0000r\u0000d\u0000a\u0000d\u0000o\u0000s\u0000\r\u0000 \u0000#\u0000 \u0000G\u0000M\u0000B\u0000o\u0000r\u0000d\u0000a\u0000d\u0000o\u0000s\u0000\r\u0000 \u0000",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SrHettich/GMBordados.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SrHettich/GMBordados/issues"
+  },
+  "homepage": "https://github.com/SrHettich/GMBordados#readme"
+}

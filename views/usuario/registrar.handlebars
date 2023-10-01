@@ -1,0 +1,67 @@
+<div class="content">
+<div class="card">
+    <div class="card-body">
+
+        <h2>Cadastro de Usuário</h2>
+        <hr>
+
+        {{#each erros}}
+        <div class="alert alert-danger">{{texto}}</div>
+        {{else}}
+
+        {{/each}}
+
+        <form action="/usuario/registro" method="post">
+        <label for="nome"><Strong>Nome:</Strong></label>
+        <p><input class="form-control" type="text" id="nome" name="nome" placeholder="Seu primeiro nome" required maxlength="15"></p>
+
+        <label for="email"><Strong>Email:</Strong></label>
+        <p><input class="form-control" type="email" id="email" name="email" placeholder="Email" required></p>
+
+        <div id="senhas">
+        <label for="senha"><Strong>Senha:</Strong></label>
+        <p><input class="form-control" type="password" name="senha" id="senha" placeholder="Senha" required maxlength="20"> 
+        </p>
+        
+
+        <label for="senha2"><Strong>Confirme sua senha:</Strong></label>
+        <p><input class="form-control" type="password" name="senha2" id="senha2" placeholder="Repita a senha" required maxlength="20"></p>
+
+        <button type="button" id="mostrar" class="ver"><img src="/images/olho.svg" class="ver" alt="" width="15px"><t id="textSenha"> Mostrar senhas</t></button>
+
+        </div>
+
+        <div class="d-grid gap-2">
+        <button class="btn btn-outline-success" type="submit">CRIAR CONTA</button>
+        </div>
+        
+        </form>
+    </div>
+</div>
+</div>
+<script type="text/javascript">
+
+var mostrar = document.getElementById('mostrar')
+
+mostrar.addEventListener('click', () =>
+{
+    var senha = document.getElementById('senha')
+    var senha2 = document.getElementById('senha2')
+    
+
+    if(senha.type == "password")
+    {
+        senha.type = "text"
+        senha2.type = "text"
+        this.style.opacity = '1'
+        
+    }
+    else
+    {
+        senha.type = "password"
+        senha2.type = "password"
+        this.style.opacity = '.5'
+        
+    }
+})
+</script>

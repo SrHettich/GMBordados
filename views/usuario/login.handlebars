@@ -1,0 +1,87 @@
+<style>
+    #login.card
+    {
+        max-width: 600px;
+        height: auto;
+        margin: auto;
+    }
+
+    #loginAlt>span
+    {
+        display: inline-block;
+        height: 1px;
+        width: 21%;
+        background-color: #c8c8c8;
+    }
+
+    #loginAlt>label
+    {
+        padding: 0 20px;
+    }
+
+    #loginAlt
+    {
+        padding-top: 1rem;
+        margin: 1rem;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+</style>
+<div class="content">
+<div class="card" id="login">
+    <div class="card-body">
+
+        <h2>Fazer login</h2>
+        <hr>
+        <form action="/usuario/login" method="post">
+        <label for="email"><strong>Email:</strong></label>
+        <p><input class="form-control" type="email" name="email" id="email" required></p>
+
+        <label for="senha"><strong>Senha:</strong></label>
+        <p>
+            <input class="form-control" type="password" name="senha" id="senha" required maxlength="20">
+           
+        </p>
+         <button type="button" id="mostrar" class="ver"><img src="/images/olho.svg" margin-bottom="10px" alt="" width="15px"> Mostrar senha</button>
+         <a href="/usuario/forgot_password">Esqueci minha senha</a>
+        <div class="d-grid gap-2">
+        <button class="btn btn-outline-success" >ENTRAR</button>
+        </div>
+</form>
+    
+
+    
+    
+</div>
+</div>
+    </div>
+
+    <script>
+        var mostrar = document.getElementById('mostrar')
+
+mostrar.addEventListener('click', () =>
+{
+    var senha = document.getElementById('senha')
+    var senha2 = document.getElementById('senha2')
+    
+
+    if(senha.type == "password")
+    {
+        senha.type = "text"
+        senha2.type = "text"
+        this.style.opacity = '1'
+        
+    }
+    else
+    {
+        senha.type = "password"
+        senha2.type = "password"
+        this.style.opacity = '.5'
+        
+    }
+})
+    </script>

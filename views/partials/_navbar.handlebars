@@ -1,0 +1,154 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+
+.btn-outline-success#pesq {
+  transition-duration: 0.4s;
+    --bs-btn-color: #ffffff;
+    --bs-btn-border-color: #ffffff;
+    --bs-btn-hover-bg: #ffffff;
+    --bs-btn-hover-border-color: #73817b;
+    --bs-btn-hover-color: #f4f4f4;
+    transition: 0.4s;
+      --bs-btn-active-bg: #ffffff;
+    
+}
+
+
+.navbar {
+--bs-nav-link-disabled-color: #ffffff;
+  color: #ffffff;
+--bs-navbar-active-color: #ffffff;
+--bs-nav-link-hover-color: none;
+--bs-navbar-nav-link-padding-x: 1rem;
+font-family: 'Poppins', sans-serif;
+font-size: 15px;
+
+}
+
+a.nav-link.active
+{
+  background-color: #F47F1B;
+}
+
+.navbar-nav
+{
+  font-size: 17px;
+  
+}
+
+a.nav-link
+{
+  color: #e4e4e4;
+  border-radius: 10px;
+  transition: all .4s ease;
+  padding: 8px 15px;
+  margin-right: 5px;
+  
+}
+
+a.nav-link:hover
+{
+  background-color: #F47F1B;
+  transition: all .4s ease;
+}
+
+#user
+{
+  margin: 0 5px;
+}
+
+#userName
+{
+  max-width: 10rem;
+  color:#e4e4e4;
+  margin-right: -.5rem;
+}
+
+.logo
+{
+  margin-right: 8px;
+}
+
+</style>
+
+<nav class="navbar navbar-expand-lg bg-primary">
+  <div class="container-fluid">
+
+      
+      <a href="/"><img class="logo" src="/images/GM_BORDADOS-removebg-preview.png" alt="GMBORDADOS" width="105"></a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Início</a>
+        </li>
+        {{#if user}}
+        {{#if eAdmin}}
+        <li class="nav-item">
+          <a class="nav-link" href="/usuario/pedidos">Meus pedidos</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/usuario/logout">Logout</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/admin/pedidos">Gerenciar pedidos</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/admin/usuarios">Gerenciar usuários</a>
+        </li>
+        {{else}}
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/usuario/pedidos">Meus pedidos</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/usuario/logout">Logout</a>
+        </li>
+        
+
+        {{/if}}
+        {{else}}
+
+        <li class="nav-item">
+          <a href="/usuario/login" class="nav-link">Login</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/usuario/registrar" class="nav-link">Criar conta</a>
+        </li>
+        {{/if}}
+      </ul>
+      
+      <form class="d-flex" role="search" method="post" action="/usuario/pedidos/pesquisa">
+        <input name="pesquisa" class="form-control me-2" type="text" placeholder="Pesquisar(Pedidos)" aria-label="Search">
+        <button id="pesq" class="btn btn-outline-success" type="submit">Pesquisar</button>
+      </form>
+
+      <img src="/images/user.svg" id="user" alt="User" width="40px">
+      <div id="userName">
+      {{#if user}}
+      {{#each user}}
+      {{nome}}
+      {{else}}
+
+      {{/each}}
+      {{else}}
+
+      {{/if}}
+</div>
+    
+    </div>
+  </div>
+</nav>
+
+<script>
+  
+</script>

@@ -1,0 +1,47 @@
+
+<h2>Editar pedido</h2>
+<hr><div class="card">
+
+<div class="card-body">
+
+{{#each erros}}
+<div class="alert alert-danger">{{texto}}</div>
+{{else}}
+
+{{/each}}
+<form  action="/admin/pedidos/edit" method="post" enctype="multipart/form-data">
+
+<label for="cliente"><strong>Cliente:</strong> </label>
+<p><input class="form-control" type="text" name="cliente" id="cliente" placeholder="Nome do cliente" value="{{pedido.cliente}}"></p>
+
+<label for="pedido"><strong>Pedido:</strong> </label>
+<p><input class="form-control" type="text" name="pedido" id="pedido" placeholder="Nome do pedido" value="{{pedido.pedido}}"></p>
+
+<label for="descri"><strong>Descrição:</strong> </label>
+<p><textarea class="form-control" name="descri" id="descri" cols="23" rows="4" placeholder="Descrição do pedido" >{{pedido.descri}}</textarea></p>
+
+<label for="quant"><strong>Quantidade:</strong> </label>
+    <p><input class="form-control" type="number" name="quant" id="quant" placeholder="Quantidade total" value="{{pedido.quant}}">
+
+    <input type="hidden" name="id" id="id" value="{{pedido._id}}">
+</p>
+<p>
+
+</label>
+
+<input accept="image/*" required type="file" name="arquivo" id="arquivo">
+
+</p>
+
+<img class="foto-pedido" src="/images/{{pedido.arquivo}}" alt="" width="150px">
+
+<p>
+    <div class="d-grid gap-2">
+    <button class="btn btn-outline-success" id="fin" onclick=reload() >Salvar</button>
+    </div>
+</p>
+</form>
+</div>
+</div>
+
+

@@ -1,0 +1,55 @@
+<style>
+#tornar, #rebaixar
+{
+    float: right;
+
+}
+#rebaixar{
+    margin-left: 10px;
+}
+
+#pesq
+{
+   
+}
+</style>
+<article class="content">
+    
+<h2>Lista de usuários</h2> 
+
+
+<hr>
+<div id="pesq"><form action="/admin/usuarios/pesq" method="post" role="search" class="d-flex">
+    <input name="pesqUsuario" id="pesqUsuario" class="form-control me-2" type="text" placeholder="Pesquisar(Email)" aria-label="Search">
+        <button id="btnPesq" class="btn btn-outline-success" type="submit">Pesquisar</button>
+</form>
+</div>
+
+{{#each usuarios}}
+<div class="card">
+    <div class="card-body">
+        <p><strong>Nome:</strong> {{nome}} 
+        <form action="/admin/rebaixar" method="post">
+        <button type="submit" id="rebaixar" class="btn btn-outline-danger">Rebaixar</button>
+        <input type="hidden" name="email" value="{{email}}">
+        </form> </p>
+
+        <form action="/admin/promover" method="post">
+        <p><strong>Email:</strong> {{email}} 
+        <input type="hidden" name="email" value="{{email}}">
+        <input type="hidden" name="eAdmin" value="{{eAdmin}}">
+        <button type="submit" id="tornar" class="btn btn-outline-success">Promover</button>
+        </form></p>
+
+
+        
+        
+        
+        <p><strong>Admin:</strong> {{eAdmin}}</p>
+    </div>
+</div>
+{{else}}
+
+{{/each}}
+
+</article>
